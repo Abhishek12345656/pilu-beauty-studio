@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilu Luxury Beauty Parlour & Bridal Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .luxury-font { font-family: 'Playfair Display', serif; }
+        
+        .login-card-hover { transition: all 0.4s ease-in-out; }
+        .login-card-hover:hover { 
+            background: linear-gradient(135deg, #FFFFFF 0%, #F9F1EF 100%);
+            transform: translateY(-6px); 
+            box-shadow: 0 30px 60px -12px rgba(107, 66, 66, 0.15); 
+            border-color: #E8C5C8;
+        }
+
+        .hover-card-effect { transition: all 0.3s ease; }
+        .hover-card-effect:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(107, 66, 66, 0.12); }
+        
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); border-color: #A67B7B; box-shadow: 0 15px 30px rgba(107, 66, 66, 0.1); }
+    </style>
+</head>
+<body class="bg-[#FCF9F6] text-[#2C2220] min-h-screen flex flex-col justify-between selection:bg-[#E8C5C8] selection:text-[#2C2220]">
+
+    <nav class="bg-white/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-[#F0E6E1] flex justify-between items-center px-8 py-4 shadow-sm">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#6B4242] text-white flex items-center justify-center font-bold luxury-font text-lg shadow-md transition-transform duration-300 hover:scale-105">P</div>
+            <div>
+                <h1 class="text-lg font-bold luxury-font tracking-wide text-[#6B4242]">PILU BEAUTY STUDIO</h1>
+                <p class="text-[10px] tracking-widest text-[#A67B7B] uppercase font-semibold">Bridal & Makeup Lounge</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="mailto:Ly9228538@gmail.com?subject=Client%20Inquiry%20/%20Doubt%20regarding%20Salon%20Service" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#6B4242] bg-[#F9F1EF] px-4 py-2 rounded-full border border-[#E8C5C8] hover:bg-[#E8C5C8]/40 transition shadow-sm">
+                ✉️ Contact Us (Gmail)
+            </a>
+            <div id="navUser" class="text-xs font-semibold px-4 py-2 bg-[#F9F1EF] text-[#6B4242] rounded-full border border-[#E8C5C8]/40 shadow-sm">
+                ✨ Welcome Guest
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 max-w-5xl mx-auto px-4 w-full flex-grow flex flex-col items-center justify-center">
+
+        <div class="text-center mb-8 max-w-lg">
+            <span class="inline-block px-4 py-1.5 bg-[#F3E8E6] text-[#6B4242] rounded-full text-xs font-bold tracking-widest uppercase mb-3 border border-[#E8C5C8]">Book Your Transformation</span>
+            <h2 class="text-3xl md:text-4xl font-bold luxury-font text-[#3D2C2A] mb-2">Experience True Elegance & Glow</h2>
+            <p class="text-xs text-[#8C7A75] font-medium leading-relaxed">Professional hair styling, bridal makeup, home visits by our expert sister artist & studio bookings.</p>
+        </div>
+
+        <!-- PREMIUM LOGIN CARD -->
+        <div id="loginCard" class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(107,66,66,0.06)] border border-[#F3E8E6] max-w-md w-full login-card-hover">
+            <div class="text-center mb-6">
+                <h3 id="loginTitle" class="text-2xl font-bold luxury-font text-[#3D2C2A] mb-1">Client Quick Login</h3>
+                <p id="loginSubtitle" class="text-xs text-[#8C7A75] font-medium">Enter your mobile number to continue</p>
+            </div>
+            
+            <div id="identifierBox" class="space-y-4">
+                <div id="phoneModeDiv" class="space-y-1.5">
+                    <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-widest">Mobile Number</label>
+                    <div class="flex items-center border border-[#EEDFD8] focus-within:border-[#A67B7B] rounded-2xl overflow-hidden bg-[#FAF7F5] px-4 py-3.5 transition duration-200 hover:border-[#A67B7B]">
+                        <span class="text-[#6B4242] font-bold text-sm mr-3 border-r border-[#EEDFD8] pr-3">+91</span>
+                        <input type="tel" id="phoneInputId" maxlength="10" oninput="validateInput(this, 'phone')" placeholder="9876543210" class="w-full bg-transparent text-[#3D2C2A] outline-none text-sm font-semibold tracking-wider">
+                    </div>
+                    <p id="phoneError" class="text-[11px] text-rose-500 font-medium hidden">Please enter a valid 10-digit mobile number starting with 6-9</p>
+                    <div class="text-right pt-1">
+                        <button type="button" onclick="toggleInputMode('email')" class="text-xs font-semibold text-[#A67B7B] hover:text-[#6B4242] transition hover:underline">Use Email-ID instead</button>
+                    </div>
+                </div>
+
+                <div id="emailModeDiv" class="space-y-1.5 hidden">
+                    <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-widest">Email Address</label>
+                    <div class="flex items-center border border-[#EEDFD8] focus-within:border-[#A67B7B] rounded-2xl overflow-hidden bg-[#FAF7F5] px-4 py-3.5 transition duration-200 hover:border-[#A67B7B]">
+                        <input type="email" id="emailInputId" oninput="validateInput(this, 'email')" placeholder="name@gmail.com" class="w-full bg-transparent text-[#3D2C2A] outline-none text-sm font-semibold">
+                    </div>
+                    <p id="emailError" class="text-[11px] text-rose-500 font-medium hidden">Please enter a valid @gmail.com email ID</p>
+                    <div class="text-right pt-1">
+                        <button type="button" onclick="toggleInputMode('phone')" class="text-xs font-semibold text-[#A67B7B] hover:text-[#6B4242] transition hover:underline">Use Mobile Number instead</button>
+                    </div>
+                </div>
+
+                <button id="continueBtn" onclick="checkUserType()" disabled class="w-full bg-[#E8C5C8] text-[#4A3331] font-bold py-4 rounded-2xl transition duration-300 shadow-sm text-sm mt-2 cursor-not-allowed">Continue</button>
+            </div>
+
+            <!-- Password Box -->
+            <div id="passwordBox" class="space-y-4 hidden">
+                <p class="text-xs text-[#8C7A75] text-center font-medium" id="pwdPrompt">Enter your secure password.</p>
+                <input type="password" id="passwordInput" placeholder="••••••••" class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] focus:border-[#A67B7B] rounded-2xl outline-none text-sm font-semibold text-[#3D2C2A] transition hover:border-[#A67B7B]">
+                <button onclick="submitLogin()" class="w-full bg-[#6B4242] hover:bg-[#523232] text-white font-bold py-4 rounded-2xl transition duration-300 shadow-md text-sm hover:shadow-lg">Secure Login</button>
+                <div class="text-center pt-2">
+                    <button onclick="triggerForgotPassword()" class="text-xs font-bold text-[#A67B7B] hover:text-[#6B4242] transition underline cursor-pointer">Forgot Password?</button>
+                </div>
+            </div>
+
+            <!-- OTP Box -->
+            <div id="otpBox" class="space-y-4 hidden">
+                <p class="text-xs text-emerald-700 text-center font-semibold" id="otpNotice">Verification code sent!</p>
+                <input type="text" id="otpInput" maxlength="4" placeholder="••••" class="w-full px-4 py-4 bg-[#FAF7F5] border border-emerald-300 focus:border-emerald-600 rounded-2xl outline-none text-sm text-center tracking-[1em] font-bold text-lg text-[#3D2C2A]">
+                <button onclick="verifyOtp()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-4 rounded-2xl transition duration-300 shadow-md text-sm hover:shadow-lg">Verify Code</button>
+            </div>
+
+            <!-- New Password Box -->
+            <div id="setNewPasswordBox" class="space-y-4 hidden">
+                <p class="text-xs text-[#6B4242] text-center font-semibold" id="pwdSetTitle">Create your password.</p>
+                <input type="password" id="newPasswordInput" placeholder="New Password" class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] focus:border-[#A67B7B] rounded-2xl outline-none text-sm font-semibold text-[#3D2C2A]">
+                <input type="password" id="confirmPasswordInput" placeholder="Confirm New Password" class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] focus:border-[#A67B7B] rounded-2xl outline-none text-sm font-semibold text-[#3D2C2A]">
+                <button onclick="registerNewUser()" class="w-full bg-[#6B4242] hover:bg-[#523232] text-white font-bold py-4 rounded-2xl transition duration-300 shadow-md text-sm hover:shadow-lg">Confirm & Login</button>
+            </div>
+        </div>
+
+        <!-- USER DASHBOARD -->
+        <div id="userDashboard" class="hidden space-y-8 w-full max-w-4xl">
+            
+            <div class="bg-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(107,66,66,0.06)] border border-[#F3E8E6]">
+                <h3 class="text-xl font-bold luxury-font mb-2 text-[#3D2C2A] text-center">Our Signature Designs & Pricing 🌸</h3>
+                <p class="text-xs text-[#8C7A75] text-center mb-6">Choose from our exclusive styles and book directly below</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                    <div class="service-card bg-[#FAF7F5] border border-[#EEDFD8] rounded-3xl p-4 text-center flex flex-col justify-between">
+                        <div class="h-32 bg-[#F3E8E6] rounded-2xl mb-3 flex items-center justify-center text-3xl shadow-inner">👰‍♀️</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#3D2C2A] mb-1">Luxury Bridal Makeup</h4>
+                            <p class="text-xs text-[#A67B7B] font-bold mb-3">₹4,500</p>
+                        </div>
+                        <button onclick="selectServiceCard('Luxury Bridal Makeup (₹4500)')" class="w-full bg-[#6B4242] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#523232] transition">Book This</button>
+                    </div>
+
+                    <div class="service-card bg-[#FAF7F5] border border-[#EEDFD8] rounded-3xl p-4 text-center flex flex-col justify-between">
+                        <div class="h-32 bg-[#F3E8E6] rounded-2xl mb-3 flex items-center justify-center text-3xl shadow-inner">🌿</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#3D2C2A] mb-1">Arabic Bridal Mehndi</h4>
+                            <p class="text-xs text-[#A67B7B] font-bold mb-3">₹2,500</p>
+                        </div>
+                        <button onclick="selectServiceCard('Arabic Bridal Mehndi (₹2500)')" class="w-full bg-[#6B4242] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#523232] transition">Book This</button>
+                    </div>
+
+                    <div class="service-card bg-[#FAF7F5] border border-[#EEDFD8] rounded-3xl p-4 text-center flex flex-col justify-between">
+                        <div class="h-32 bg-[#F3E8E6] rounded-2xl mb-3 flex items-center justify-center text-3xl shadow-inner">✨</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#3D2C2A] mb-1">Minimalist Party Mehndi</h4>
+                            <p class="text-xs text-[#A67B7B] font-bold mb-3">₹800</p>
+                        </div>
+                        <button onclick="selectServiceCard('Minimalist Party Mehndi (₹800)')" class="w-full bg-[#6B4242] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#523232] transition">Book This</button>
+                    </div>
+
+                    <div class="service-card bg-[#FAF7F5] border border-[#EEDFD8] rounded-3xl p-4 text-center flex flex-col justify-between">
+                        <div class="h-32 bg-[#F3E8E6] rounded-2xl mb-3 flex items-center justify-center text-3xl shadow-inner">🎨</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#3D2C2A] mb-1">Modern Wall Mural Art</h4>
+                            <p class="text-xs text-[#A67B7B] font-bold mb-3">₹3,000</p>
+                        </div>
+                        <button onclick="selectServiceCard('Modern Wall Mural Art (₹3000)')" class="w-full bg-[#6B4242] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#523232] transition">Book This</button>
+                    </div>
+
+                    <div class="service-card bg-[#FAF7F5] border border-[#EEDFD8] rounded-3xl p-4 text-center flex flex-col justify-between">
+                        <div class="h-32 bg-[#F3E8E6] rounded-2xl mb-3 flex items-center justify-center text-3xl shadow-inner">🖼</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#3D2C2A] mb-1">Canvas Portrait Painting</h4>
+                            <p class="text-xs text-[#A67B7B] font-bold mb-3">₹1,800</p>
+                        </div>
+                        <button onclick="selectServiceCard('Canvas Portrait Painting (₹1800)')" class="w-full bg-[#6B4242] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#523232] transition">Book This</button>
+                    </div>
+
+                    <div class="service-card bg-[#FAF7F5] border border-[#EEDFD8] rounded-3xl p-4 text-center flex flex-col justify-between">
+                        <div class="h-32 bg-[#F3E8E6] rounded-2xl mb-3 flex items-center justify-center text-3xl shadow-inner">💇‍♀️</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#3D2C2A] mb-1">Party Glam & Hair Styling</h4>
+                            <p class="text-xs text-[#A67B7B] font-bold mb-3">₹1,500</p>
+                        </div>
+                        <button onclick="selectServiceCard('Party Glam & Hair Styling (₹1500)')" class="w-full bg-[#6B4242] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#523232] transition">Book This</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(107,66,66,0.06)] border border-[#F3E8E6] hover-card-effect">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-[#A67B7B]">Salon Client Portal</span>
+                        <h2 class="text-2xl font-bold luxury-font text-[#3D2C2A]">Book Your Appointment 💄</h2>
+                    </div>
+                    <button onclick="logout()" class="text-xs bg-[#FAF7F5] hover:bg-[#F3E8E6] text-[#6B4242] font-semibold px-4 py-2.5 rounded-xl border border-[#EEDFD8] transition hover:shadow-sm">Logout</button>
+                </div>
+                
+                <form id="bookingForm" onsubmit="showPaymentModal(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Client Full Name</label>
+                            <input type="text" id="bName" placeholder="Pooja Sharma" required class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium transition hover:border-[#A67B7B]">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Phone Number</label>
+                            <input type="tel" id="bPhone" placeholder="9876543210" required class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium transition hover:border-[#A67B7B]">
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Service Mode (Kahan service chahiye?)</label>
+                        <select id="bServiceType" onchange="toggleServiceMode()" class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium text-[#3D2C2A] transition hover:border-[#A67B7B] cursor-pointer">
+                            <option value="Home Visit">Home Visit</option>
+                            <option value="Studio Visit">Visit Salon Studio</option>
+                        </select>
+                    </div>
+
+                    <div id="addressBoxDiv" class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Complete Home Address (Where service is needed)</label>
+                        <textarea id="bAddress" rows="2" placeholder="House No, Street Name, Landmark, City" class="w-full px-4 py-3 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium text-[#3D2C2A] transition hover:border-[#A67B7B]"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Select Service & Price</label>
+                            <select id="bService" class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium text-[#3D2C2A] transition hover:border-[#A67B7B] cursor-pointer">
+                                <option value="Luxury Bridal Makeup (₹4500)">Luxury Bridal Makeup (₹4500)</option>
+                                <option value="Arabic Bridal Mehndi (₹2500)">Arabic Bridal Mehndi (₹2500)</option>
+                                <option value="Minimalist Party Mehndi (₹800)">Minimalist Party Mehndi (₹800)</option>
+                                <option value="Modern Wall Mural Art (₹3000)">Modern Wall Mural Art (₹3000)</option>
+                                <option value="Canvas Portrait Painting (₹1800)">Canvas Portrait Painting (₹1800)</option>
+                                <option value="Party Glam & Hair Styling (₹1500)">Party Glam & Hair Styling (₹1500)</option>
+                                <option value="Royal Glow Facial & Spa (₹1400)">Royal Glow Facial & Spa (₹1400)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Appointment Date</label>
+                            <input type="date" id="bDate" required class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium transition hover:border-[#A67B7B]">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-bold text-[#6B4242] uppercase tracking-wider">Preferred Slot</label>
+                            <select id="bSlot" class="w-full px-4 py-3.5 bg-[#FAF7F5] border border-[#EEDFD8] rounded-2xl text-sm focus:border-[#A67B7B] outline-none font-medium text-[#3D2C2A] transition hover:border-[#A67B7B] cursor-pointer">
+                                <option value="10 AM - 1 PM">Morning (10 AM - 1 PM)</option>
+                                <option value="2 PM - 5 PM">Afternoon (2 PM - 5 PM)</option>
+                                <option value="5 PM - 8 PM">Evening (5 PM - 8 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-[#6B4242] hover:bg-[#523232] text-white font-bold py-4 rounded-2xl shadow-lg shadow-[#6B4242]/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 mt-2">Proceed to UPI Advance Payment</button>
+                </form>
+            </div>
+
+            <!-- UPI QR Modal -->
+            <div id="upiModal" class="hidden bg-white p-8 rounded-[2.5rem] shadow-2xl border border-[#F3E8E6] text-center max-w-md mx-auto">
+                <h3 class="text-xl font-bold luxury-font text-[#6B4242] mb-1">Salon UPI Advance Payment</h3>
+                <p class="text-xs text-[#8C7A75] mb-4">Scan using GPay, PhonePe, or Paytm to confirm slot.</p>
+                <div class="bg-[#FAF7F5] p-5 inline-block rounded-3xl border border-[#EEDFD8] shadow-inner mb-5">
+                    <div class="w-48 h-48 bg-white flex flex-col items-center justify-center border border-[#EEDFD8] rounded-2xl text-xs font-bold text-[#6B4242]">
+                        🛍️ [ SALON QR CODE ]<br>
+                        <span class="text-[#A67B7B] text-[11px] mt-2">UPI: pilubeauty@ybl</span>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="confirmBookingAfterPayment()" class="w-full bg-emerald-700 text-white font-bold py-3.5 rounded-2xl hover:bg-emerald-800 text-sm transition hover:shadow-md">Payment Done - Confirm</button>
+                    <button onclick="cancelPaymentModal()" class="w-full bg-[#FAF7F5] text-[#6B4242] border border-[#EEDFD8] font-bold py-3.5 rounded-2xl hover:bg-[#F3E8E6] text-sm transition">Cancel</button>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(107,66,66,0.06)] border border-[#F3E8E6] hover-card-effect">
+                <h3 class="text-xl font-bold luxury-font mb-4 text-[#3D2C2A]">My Appointments</h3>
+                <div id="myBookingsList" class="space-y-3">
+                    <p class="text-sm text-[#8C7A75]">No appointments booked yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN DASHBOARD -->
+        <div id="adminDashboard" class="hidden space-y-8 w-full">
+            <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(107,66,66,0.06)] border border-[#F3E8E6] hover-card-effect">
+                <div class="flex justify-between items-center mb-8">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-[#A67B7B]">Management</span>
+                        <h2 class="text-2xl font-bold luxury-font text-[#6B4242]">Salon Admin Control Panel ⚡</h2>
+                    </div>
+                    <button onclick="logout()" class="text-xs bg-[#FAF7F5] hover:bg-[#F3E8E6] text-[#6B4242] font-semibold px-4 py-2.5 rounded-xl border border-[#EEDFD8] transition hover:shadow-sm">Logout</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-[#FAF7F5] border border-[#EEDFD8] p-6 rounded-3xl text-center transition hover:border-[#A67B7B] hover:shadow-md">
+                        <h4 class="text-xs font-bold text-[#A67B7B] uppercase tracking-wider mb-1">Total Clients</h4>
+                        <p id="statUsers" class="text-3xl font-bold text-[#3D2C2A] luxury-font">0</p>
+                    </div>
+                    <div class="bg-emerald-50/50 border border-emerald-100 p-6 rounded-3xl text-center transition hover:border-emerald-300 hover:shadow-md">
+                        <h4 class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">Total Bookings</h4>
+                        <p id="statBookings" class="text-3xl font-bold text-[#3D2C2A] luxury-font">0</p>
+                    </div>
+                    <div class="bg-rose-50/50 border border-rose-100 p-6 rounded-3xl text-center transition hover:border-rose-300 hover:shadow-md">
+                        <h4 class="text-xs font-bold text-rose-700 uppercase tracking-wider mb-1">Cancelled Slots</h4>
+                        <p id="statCancelled" class="text-3xl font-bold text-[#3D2C2A] luxury-font">0</p>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold luxury-font mb-4 text-[#3D2C2A]">Client Appointments Overview</h3>
+                <div id="adminBookingsTable" class="overflow-x-auto"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

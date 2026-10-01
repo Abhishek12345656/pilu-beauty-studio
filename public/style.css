@@ -1,0 +1,12 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.heading-font {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom smooth transitions */
+button, input, select {
+    transition: all 0.2s ease-in-out;
+}
