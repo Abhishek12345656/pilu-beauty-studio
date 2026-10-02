@@ -1,0 +1,73 @@
+{
+  "users": [],
+  "bookings": [],
+  "categories": [
+    {
+      "id": "c1",
+      "name": "Haircut & Styling",
+      "description": "Professional hair cutting and styling"
+    },
+    {
+      "id": "c2",
+      "name": "Facial & Cleanup",
+      "description": "Glowing skin cleanups and facials"
+    },
+    {
+      "id": "c3",
+      "name": "Bridal Makeup",
+      "description": "Exclusive bridal and party makeup"
+    },
+    {
+      "id": "c4",
+      "name": "Spa & Massage",
+      "description": "Relaxing body massage and spa"
+    },
+    {
+      "id": "c5",
+      "name": "Nail Art & Care",
+      "description": "Trendy nail art and manicures"
+    }
+  ],
+  "services": [
+    {
+      "id": "s1",
+      "categoryId": "c3",
+      "title": "Bridal Makeup",
+      "price": 6999,
+      "discountPrice": 4999,
+      "duration": "180 min",
+      "description": "Complete HD Bridal Makeup package for your special day.",
+      "includes": [
+        "HD Makeup",
+        "Hairstyling",
+        "Lashes",
+        "Basic Draping"
+      ],
+      "rating": 4.8,
+      "totalReviews": 126,
+      "homeVisitAvailable": true,
+      "studioAvailable": true,
+      "status": "Active"
+    },
+    {
+      "id": "s2",
+      "categoryId": "c2",
+      "title": "Glowing Facial",
+      "price": 1999,
+      "discountPrice": 1299,
+      "duration": "60 min",
+      "description": "Deep cleansing and glowing facial treatment.",
+      "includes": [
+        "Cleansing",
+        "Scrub",
+        "Mask",
+        "Massage"
+      ],
+      "rating": 4.6,
+      "totalReviews": 84,
+      "homeVisitAvailable": true,
+      "studioAvailable": true,
+      "status": "Active"
+    }
+  ]
+}
